@@ -5,29 +5,110 @@
     padding: 0;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 .mobile_wrap {
-    width: 600px;
-    height: 100vh;
-    border: 1px solid black;
+    width: 100%;
+    height: auto;
+    /* border: 1px solid black; */
     margin: 0 auto;
 }
 
+/* height 값이 최저 일 때는 px 로 값을 기입해야됨 */
 .mobile_contents_wrap {
-    width: 100%;
-    height: 100%;
+    width: 600;
+    height: 120vh;
+    overflow: hidden;
     position: relative;
-    /* background: #fdfdfd; */
+    top: 0;
+    background: #fdfdfd;
+}
+
+.user_img {
+    width: 40%;
+    position: absolute;
+    top: 6vw;
+    right: 0;
+    z-index: 0;
+}
+
+.blurred-overlay {
+    width: 45%;
+    height: 52vw;
+    position: absolute;
+    top: 5vw;
+    right: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 5%, rgba(0, 0, 0, 0) 40%);
+    z-index: 1;
+}
+
+.slogan {
+    position: absolute;
+    top: 50vw;
+    left: 10%;
+    display: inline-block;
+    width: auto;
+    font-size: 6.5rem;
+    text-align: center;
+    z-index: 5;
+    letter-spacing: -0px;
+    font-weight: 300;
 }
 
 .user_information_box {
-    width: 90%;
-    height: calc(100vh - 45vh);
+    width: 100vw;
+    height: 100vh;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    top: 60vw;
+    left: 10vw;
     background-color: rgb(255, 255, 255);
     box-shadow: 2px 4px 16px 0 rgba(0, 0, 0, 0.14);
-    ;
+    z-index: 3;
+    padding: 20rem 20rem;
+}
+
+.user_information_box ul {
+    margin-top: 10rem;
+}
+
+.user_information_box li {
+    height: 10vw;
+    display: flex;
+    align-items: flex-end;
+    gap: 7rem;
+}
+
+.user_information_box .name_ko {
+    font-size: 12rem;
+    font-weight: 100;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 5px rgb(169, 169, 169);
+}
+
+.position_ko {
+    font-size: 7rem;
+    font-weight: 300;
+    letter-spacing: 10px;
+    font-size: 7rem;
+    color: rgb(145, 145, 145);
+}
+
+.user_information_box .name_en {
+    font-size: 7rem;
+    font-weight: 300;
+    /* letter-spacing: 3px; */
+}
+
+.position_en{
+    font-size: 7rem;
+    font-weight: 300;
+    /* letter-spacing: 3px; */
 }
 
 .brand_logo {
@@ -43,40 +124,5 @@
     width: 100%;
     position: absolute;
     left: 0;
-    bottom: 0;
-}
-
-.slogan {
-    position: absolute;
-    top: 27%;
-    left: 10%;
-    /* transform: translateX(-50%); */
-    display: inline-block;
-    width: auto;
-    font-size: 4rem;
-    text-align: center;
-}
-
-.blurred-image {
-    position: relative;
-    z-index: -1;
-    width: 100%;
-    height: 50%;
-}
-
-.user_img {
-    width: 40%;
-    position: absolute;
-    top: 22%;
-    right: 0;
-}
-
-.blurred-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 40%);
-    z-index: 2;
+    top: 90vw;
 }
