@@ -1,20 +1,26 @@
+const userInformationBox = document.querySelectorAll(".user_information_box")[0];
+const mobileContentsWrap = document.querySelectorAll(".mobile_contents_wrap")[0];
+const topLogo = document.querySelectorAll(".top_logo")[0];
+let previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+const userInformationBoxInner = document.querySelectorAll(".user_information_box_inner")[0];
+const brandColorBar = document.querySelectorAll(".brand_color_bar")[0];
+window.addEventListener("scroll", () => {
+    const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-// const canvas = document.getElementById("myCanvas");
-// const ctx = canvas.getContext("2d");
-// const img = new Image();
+    if (currentScrollPosition > previousScrollPosition) {
+        // Scrolling down
+        userInformationBox.classList.add("move_position");
+        setTimeout(()=>{
+            topLogo.classList.add("fade_in");
+            brandColorBar.classList.add("to_right");
+        },500)
+    } else {
+        // Scrolling up
+        userInformationBox.classList.remove("move_position");
+        topLogo.classList.remove("fade_in");
+        brandColorBar.classList.remove("to_right");
+    }
 
-// img.onload = () => {
-//     canvas.width = img.width;
-//     canvas.height = img.height;
+    previousScrollPosition = currentScrollPosition;
+});
 
-//     ctx.drawImage(img, 0, 0);
-
-//     const gradient = ctx.createLinearGradient(0, canvas.height * 0.7, 0, canvas.height);
-//     gradient.addColorStop(0, "rgba(0, 0, 0, 0)");
-//     gradient.addColorStop(0, "rgba(0, 0, 0, 1)");
-
-//     ctx.fillStyle = gradient;
-//     ctx.fillRect(0, canvas.height * 0.7, canvas.width, canvas.height);
-// };
-
-// img.src = "img/test.jpg";
